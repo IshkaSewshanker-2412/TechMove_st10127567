@@ -1,0 +1,30 @@
+﻿@model IEnumerable<TechMoveGLMS.Models.Client>
+
+<h2>Clients</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Contact Details</th>
+            <th>Region</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var client in Model)
+        {
+            <tr>
+                <td>@client.Name</td>
+                <td>@client.ContactDetails</td>
+                <td>@client.Region</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Create" class="btn btn-primary">Add New Client</a>
+
+<!-- New button for contracts page -->
+<a asp-controller="Contracts" asp-action="Create" class="btn btn-success ms-2">
+    Create Contract
+</a>

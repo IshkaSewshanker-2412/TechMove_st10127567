@@ -1,0 +1,24 @@
+# Ignore build outputs
+bin/
+obj/
+*/bin/
+*/obj/
+
+# Ignore uploads and large files
+wwwroot/uploads/
+*.pdf
+*.mp4
+*.zip
+
+# Ignore DLLs and executables
+*.dll
+*.exe
+
+# Ignore Visual Studio files
+.vs/
+*.suo
+*.user
+.vscode/
+
+# Ignore client-side libraries
+wwwroot/lib/

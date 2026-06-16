@@ -1,0 +1,19 @@
+# Build stage
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+WORKDIR /src
+
+# Copy entire solution
+COPY . .
+
+# Exclude MVC configs to avoid duplicate appsettings
+RUN rm -f TechMoveGLMS/appsettings*.json
+
+# Restore and publish API project
+RUN dotnet restore TechMoveGLMS.Api/TechMoveGLMS.Api.csproj
+RUN dotnet publish TechMoveGLMS.Api/TechMoveGLMS.Api.csproj -c Release -o /app/publish
+
+# Runtime stage
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
+WORKDIR /app
+COPY --from=build /app/publish .
+ENTRYPOINT ["dotnet", "TechMoveGLMS.Api.dll"]

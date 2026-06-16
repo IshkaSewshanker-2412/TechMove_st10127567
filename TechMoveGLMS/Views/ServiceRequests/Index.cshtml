@@ -1,0 +1,27 @@
+﻿@model IEnumerable<TechMoveGLMS.Models.ServiceRequest>
+
+<h2>Service Requests</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Description</th>
+            <th>Cost (ZAR)</th>
+            <th>Status</th>
+            <th>Contract (Client Name)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var request in Model)
+        {
+            <tr>
+                <td>@request.Description</td>
+                <td>@request.Cost.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("en-ZA"))</td>
+                <td>@request.Status</td>
+                <td>@request.Contract?.Client?.Name</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Create" class="btn btn-primary">Add New Request</a>

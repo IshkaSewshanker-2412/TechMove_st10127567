@@ -1,0 +1,9 @@
+bin/
+obj/
+.vs/
+wwwroot/lib/
+*.dll
+*.exe
+*.pdf
+*.zip
+*.mp4

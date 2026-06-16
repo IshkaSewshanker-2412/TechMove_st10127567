@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="docker-compose.yml" />
+    <File Path="Dockerfile.api" />
+    <File Path="Dockerfile.mvc" />
+  </Folder>
+  <Project Path="TechMoveGLMS.Api/TechMoveGLMS.Api.csproj" Id="1ed79d2c-e913-4a30-8e45-0aa79330f7f0" />
+  <Project Path="TechMoveGLMS.Tests/TechMoveGLMS.Tests.csproj" Id="0b2c3e31-e343-4789-877c-b7c172c11ff2" />
+  <Project Path="TechMoveGLMS/TechMoveGLMS.csproj" />
+  <Project Path="TechMoveGLMSv2.Tests/TechMoveGLMSv2.Tests.csproj" Id="707621fc-aba8-4037-ba82-515ce999ff70" />
+</Solution>
